@@ -1,0 +1,110 @@
+CREATE DATABASE yeyevo;
+
+USE yeyevo;
+
+CREATE TABLE cliente (
+    doc INT NOT NULL PRIMARY KEY,
+    nombres VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    correo VARCHAR(30) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,  
+    direccion VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE empleado (
+    doc INT NOT NULL PRIMARY KEY,
+    nombres VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    cargo VARCHAR(20) NOT NULL,
+    sueldo INT NOT NULL,
+    correo VARCHAR(30) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,  
+    direccion VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL,
+    contraseña VARCHAR(50) NOT NULL,
+    empleado_id INT UNIQUE,
+    cliente_id INT UNIQUE,
+    FOREIGN KEY (empleado_id) REFERENCES empleado(doc),
+    FOREIGN KEY (cliente_id) REFERENCES cliente(doc)
+);
+
+CREATE TABLE forma_pago (
+    codi INT NOT NULL PRIMARY KEY,
+    desc_p VARCHAR(50) NOT NULL  
+);
+
+CREATE TABLE factura (
+    num_factura INT NOT NULL PRIMARY KEY,
+    fecha DATE NOT NULL,
+    cod_p INT NOT NULL,
+    doc_emp INT NOT NULL,
+    doc_cli INT NOT NULL,
+    FOREIGN KEY (cod_p) REFERENCES forma_pago(codi),
+    FOREIGN KEY (doc_emp) REFERENCES empleado(doc),
+    FOREIGN KEY (doc_cli) REFERENCES cliente(doc)
+);
+
+CREATE TABLE categoria (
+    id INT NOT NULL PRIMARY KEY,
+    nombre VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE productos (
+    id INT NOT NULL PRIMARY KEY,
+    nombre VARCHAR(20) NOT NULL,
+    valor_uni INT NOT NULL,
+    cantidad_prod INT NOT NULL,
+    id_cate INT NOT NULL,
+    FOREIGN KEY (id_cate) REFERENCES categoria(id)
+);
+
+CREATE TABLE detalle_factura (
+    id INT NOT NULL PRIMARY KEY,
+    num_factura INT NOT NULL,
+    cantidad INT NOT NULL,
+    valor_venta INT NOT NULL,
+    cod_prod INT NOT NULL,
+    FOREIGN KEY (cod_prod) REFERENCES productos(id),
+    FOREIGN KEY (num_factura) REFERENCES factura(num_factura)
+);
+
+INSERT INTO `cliente` (`doc`, `nombres`, `apellidos`, `correo`, `telefono`, `direccion`) VALUES ('1043437522', 'Hanner Javid', 'Causil Palacio', 'hannerpalacio@gmail.com', '3002892960', 'Cra 50 #59a-27 sur');
+
+INSERT INTO `empleado` (`doc`, `nombres`, `apellidos`, `cargo`, `sueldo`, `correo`, `telefono`, `direccion`) VALUES ('1', 'Juan', 'Pardo', 'Montacarguista', '1200000', 'juanpardo@gmail.com', '3005421369', 'Cra 70 #21-37 ');
+
+INSERT INTO `usuario` (`id`, `usuario`, `contraseña`, `empleado_id`, `cliente_id`) VALUES ('12', 'Juan', 'juan123', '1', NULL);
+
+INSERT INTO `usuario` (`id`, `usuario`, `contraseña`, `empleado_id`, `cliente_id`) VALUES ('1', 'Hanner', 'hanner123', NULL, '1043437522');
+
+UPDATE usuario SET contraseña = SHA2('juan123', 256) WHERE id = 12;
+
+UPDATE usuario SET contraseña = SHA2('hanner123', 256) WHERE id = 1;
+
+SELECT * FROM usuario;
+
+SELECT * 
+FROM usuario 
+WHERE empleado_id IS NULL;
+
+
+SELECT usuario 
+FROM usuario 
+WHERE cliente_id = (SELECT doc FROM cliente WHERE nombres = 'Hanner Javid' AND apellidos = 'Causil Palacio');
+
+SELECT u.usuario, e.nombres AS nombre_empleado
+FROM usuario u
+INNER JOIN empleado e ON u.empleado_id = e.doc;
+
+
+
+
+
+
+
+
+
+
