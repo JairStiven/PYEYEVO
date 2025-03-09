@@ -1,0 +1,25 @@
+.product-list {
+    margin-top: 20px;
+}
+
+.product-list table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-list table img {
+    max-width: 100px;
+    height: auto;
+}
+
+.product-list button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product-list button:hover {
+    background-color: #218838;
+}

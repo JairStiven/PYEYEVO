@@ -1,0 +1,155 @@
+/* Estilos generales */
+.App {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+  }
+  
+  .welcome-container {
+    position: relative;
+    height: 40vh;
+    background-image: url('./img/logo.png');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 0 20px;
+  }
+  
+  .welcome-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    z-index: 1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+    margin-bottom: 30px;
+    background-color: #343a40;
+  }
+
+  .container-fluid {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    
+  }
+  .a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  /* Sección de productos */
+  .product-section {
+    margin-top: 50px;
+    padding: 20px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Cambié de cover a contain para evitar recortes */
+  }
+  
+  .card-body {
+    background-color: #fff;
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  .card-text {
+    color: #6c757d;
+  }
+  
+  /* Botón de compra */
+  .btn {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .product-list {
+        flex-direction: column;
+    }
+  
+    h1 {
+        font-size: 2rem;
+    }
+  
+    .card-img-top {
+        height: 150px;
+    }
+  }
+  

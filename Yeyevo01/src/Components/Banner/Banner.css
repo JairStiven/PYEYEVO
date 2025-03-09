@@ -1,0 +1,66 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 80vh; 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://scontent-bog2-2.xx.fbcdn.net/v/t39.30808-6/215947987_3116868701866061_2629590255501275617_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF_bZxaREjx9OE5spho0ME7rvHKgGHYktqu8cqAYdiS2gZQeI12TG8Hgv6Q2fcbrzJysDIbyL8reGXtBaO6-IQQ&_nc_ohc=SrsQ3wSu9qwQ7kNvgFSQPwZ&_nc_zt=23&_nc_ht=scontent-bog2-2.xx&_nc_gid=ApPM6AODBx9eyLe07UTzGuL&oh=00_AYCG6-ALSjIKZ5bQPCCkkL3cMpR6m_tMfwGYWn4kQZFxZw&oe=6749BC66");
+}
+
+
+.banner-container {
+  text-align: center;
+  padding: 15% 0; 
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 62px; 
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 30px; 
+  color: white;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 60vh; 
+  }
+
+  .banner h1 {
+    font-size: 48px; 
+  }
+
+  .banner p {
+    font-size: 24px; 
+  }
+
+  .banner-container {
+    padding: 10% 0; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 50vh; 
+  }
+
+  .banner h1 {
+    font-size: 32px; 
+  }
+
+  .banner p {
+    font-size: 18px; 
+  }
+
+  .banner-container {
+    padding: 8% 0; 
+  }
+}

@@ -1,0 +1,189 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+    color: #333;
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .search-bar input {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  
+  .login-icon a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .login-icon a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sección de la imagen de fondo */
+  .hero-section {
+    position: relative;
+    height: 70vh; 
+    background-image: url('./img/logo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 0 20px;
+  }
+  
+  .hero-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    z-index: 1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+  }
+  
+/* Sección de Productos */
+.products-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  gap: 20px; /* Espacio entre las cajas */
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 0; /* Eliminar margen entre las cajas */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Fijar un tamaño fijo para cada caja */
+  height: 200px; /* Altura para que no haya un espacio adicional */
+}
+
+.product-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.product-description {
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Asegurarse de que ocupe toda la caja */
+}
+
+.product-description h3 {
+  margin-bottom: 10px;
+}
+
+.product-description button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-description button:hover {
+  background-color: #555;
+}
+
+  
+  /* Estilos Responsivos */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-bar input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .hero-section {
+      height: 50vh; 
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .products-section {
+      flex-direction: column;
+    }
+  
+    .product-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+ 
+
+
+  .pdf-download-button {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+  }
+  
+  .pdf-download-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pdf-download-button button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+
