@@ -1,0 +1,167 @@
+/* === ESTILO PARA REGISTER === */
+
+/* 1) RESET & GLOBAL SETTINGS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 2) CONTENEDOR PRINCIPAL */
+.register-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/ruta/del/fondo.jpg'); /* puedes cargarlo dinámicamente si prefieres */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay oscuro */
+.register-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* 3) CAJA DE REGISTRO */
+.register-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 40px 30px;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.register-box h2 {
+  font-size: 2rem;
+  color: #ff3b3b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 4) FORMULARIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f2f2f2;
+}
+
+.input-group input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.input-group input:focus {
+  border: 2px solid #ff3b3b;
+  background: #fff;
+}
+
+/* 5) BOTÓN */
+.register-btn {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff3b3b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #e60000;
+}
+
+/* 6) MENSAJES */
+.success-message {
+  background: rgba(0, 255, 0, 0.15);
+  color: #b9f8b9;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ffd1d1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* 7) ENLACE A LOGIN */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffaaaa;
+}
+
+.login-link a {
+  color: #ffaaaa;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #ff3b3b;
+}
+
+/* 8) RESPONSIVE */
+@media (max-width: 500px) {
+  .register-box {
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .register-box h2 {
+    font-size: 1.6rem;
+  }
+}

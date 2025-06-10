@@ -1,0 +1,21 @@
+# Imagen base oficial de Node.js
+FROM node:18
+
+# Crear directorio de la app en el contenedor
+WORKDIR /usr/src/app
+
+# Copiar package.json y package-lock.json para instalar dependencias
+COPY package*.json ./
+
+# Instalar dependencias (producción)
+RUN npm install 
+RUN npm install -g nodemon
+
+# Copiar el resto del código fuente al contenedor
+COPY . .
+
+# Exponer el puerto en el que corre el backend (ajusta si usas otro)
+EXPOSE 5000
+
+# Comando para arrancar el backend
+CMD ["npx nodemon", "src/app.js"]

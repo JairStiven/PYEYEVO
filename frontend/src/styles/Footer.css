@@ -1,0 +1,19 @@
+.footer-container {
+  background-color: var(--color-primary); /* Fondo negro para coherencia */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px; /* Separación respecto al contenido principal */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--color-accent); /* Acento en rojo */
+}

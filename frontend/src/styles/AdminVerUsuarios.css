@@ -1,0 +1,190 @@
+/* ------------------------------------------------------------
+   AdminVerUsuarios.css
+   ------------------------------------------------------------ */
+
+/* Contenedor principal */
+.admin-ver-usuarios {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+  min-height: 100vh;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.header .icon {
+  margin-right: 0.5rem;
+  color: #ff4d4d;
+}
+.header h2 {
+  font-size: 2rem;
+  color: #ff4d4d;
+  margin: 0;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* Glass‑card para la tabla */
+.table-wrapper {
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-wrapper thead {
+  background: #2b2b2b;
+}
+.table-wrapper thead th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ff4d4d;
+}
+.table-wrapper tbody tr {
+  color: #333;
+}
+.table-wrapper tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.9);
+}
+.table-wrapper tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.8);
+}
+.table-wrapper tbody tr:hover {
+  background: rgba(255, 77, 77, 0.2);
+}
+.table-wrapper td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+}
+
+/* Sub-encabezado del formulario */
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.form-header .icon-plus {
+  margin-right: 0.5rem;
+  color: #8e44ad;
+}
+.form-header h3 {
+  font-size: 1.3rem;
+  color: #ff4d4d;
+  margin: 0;
+}
+
+/* Mensaje informativo */
+.message {
+  margin: 0 auto 1.5rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  animation: popUp 0.5s ease forwards;
+}
+
+/* Glass‑card para el formulario */
+.form-wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.form-wrapper .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-wrapper .form-group {
+  flex: 1;
+}
+.form-wrapper .form-group.full {
+  width: 100%;
+}
+
+/* Inputs */
+.form-wrapper input {
+  width: 100%;
+  background: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-wrapper input::placeholder {
+  color: #666;
+}
+.form-wrapper input:focus {
+  outline: none;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 6px rgba(255, 77, 77, 0.5);
+}
+
+/* Botón */
+.btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(255, 77, 77, 0.3);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+/* Animaciones globales */
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes popUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-wrapper,
+  .form-wrapper {
+    padding: 1rem;
+  }
+  .table-wrapper td,
+  .table-wrapper th {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}

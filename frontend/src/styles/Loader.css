@@ -1,0 +1,31 @@
+/* Contenedor general del Loader */
+.loader-container {
+  display: flex;
+  flex-direction: column; /* Texto debajo del spinner */
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* Ajusta según necesites */
+}
+
+/* Spinner circular */
+.loader {
+  border: 8px solid var(--color-beige);      /* Borde en beige */
+  border-top: 8px solid var(--color-accent);   /* Acento rojo en la parte superior */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px; /* Espacio para el texto */
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Texto opcional debajo del loader */
+.loader-container p {
+  color: var(--color-primary); /* Negro */
+  font-size: 1.1rem;
+}

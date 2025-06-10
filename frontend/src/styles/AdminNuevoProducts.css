@@ -1,0 +1,125 @@
+/* ------------------------------------------------------------
+   AdminNuevoProducts.css
+   Path: src/styles/AdminNuevoProducts.css
+   ------------------------------------------------------------ */
+
+/* Contenedor principal */
+.admin-new-product {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+  min-height: 100vh;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+.admin-new-product .header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.admin-new-product .header h2 {
+  font-size: 2rem;
+  color: #ff4d4d;
+  animation: slideDown 0.8s ease-in-out;
+  margin: 0;
+}
+
+/* Formulario como tarjeta glass */
+.product-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: popUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+/* Grupos de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+.form-row .half {
+  flex: 1;
+}
+
+/* Labels */
+.product-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+/* Inputs, textarea, select */
+.product-form input,
+.product-form textarea,
+.product-form select {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.6rem;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.product-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+  outline: none;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+}
+
+/* Botón guardar/actualizar */
+.btn-save-product {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(255, 77, 77, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-save-product:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes popUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

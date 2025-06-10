@@ -1,0 +1,191 @@
+/* Fondo dinámico - Reaprovechamos el diseño de Products */
+.products-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Capa oscura sobre el fondo */
+.products-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor general del producto con efecto glass */
+.product-details-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Título */
+.product-details-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Imagen del producto */
+.product-details-container img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Descripción */
+.product-description {
+  font-size: 1.1rem;
+  color: #eee;
+  margin: 0.8rem 0;
+}
+
+/* Categoría y Stock */
+.product-category,
+.product-stock {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #ccc;
+}
+
+/* Sección de selección de talla */
+.talla-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.talla-section label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.talla-section select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 60%;
+  text-align: center;
+}
+
+/* Precio */
+.product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 1rem 0;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Estilo base para ambos botones */
+.product-details-container button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+
+/* Botón Añadir al Carrito */
+.btn-add {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.btn-add:hover {
+  background-color: #cc0000;
+  transform: translateY(-3px);
+}
+
+/* Botón Ver Carrito */
+.btn-cart {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-cart:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+}
+
+/* Mensaje de "Producto añadido" */
+.added-message {
+  color: #00ff00;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeInOut 1.5s ease forwards;
+}
+
+/* Animación fade */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+/* Estado de carga */
+.loading {
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 600px) {
+  .product-details-container {
+    padding: 1.5rem;
+  }
+
+  .product-details-container img {
+    max-width: 300px;
+  }
+
+  .product-details-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-description {
+    font-size: 1rem;
+  }
+
+  .talla-section select {
+    width: 80%;
+  }
+}

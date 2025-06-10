@@ -1,0 +1,128 @@
+/* Variables de color */
+:root {
+  --color-primary: #000;        /* Negro */
+  --color-accent: #800000;      /* Vino tinto */
+  --color-light-gray: #f2f2f2;  /* Gris claro */
+}
+
+/* 📌 Ajuste general del navbar */
+.navbar-container {
+  background: var(--color-primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-accent);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* toque sutil */
+}
+
+/* 📌 Contenido del navbar */
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* 📌 Logo */
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 1px; /* sutil espaciado */
+}
+
+/* 📌 Enlaces del navbar */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* un poco más compacto */
+  align-items: center;
+}
+
+/* 📌 Enlaces con iconos */
+.navbar-links a,
+.nav-button,
+.logout-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  padding: 5px 0; /* espacio arriba y abajo */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 📌 Iconos sin distorsión */
+.nav-icon {
+  width: 35px;
+  height: auto;             /* mantiene proporción */
+  object-fit: contain;      /* ajusta dentro de su caja */
+  margin-bottom: 6px;       /* separación del texto */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 📌 Efectos de hover */
+.navbar-links a:hover,
+.nav-button:hover,
+.logout-btn:hover {
+  color: var(--color-accent);
+  text-shadow: 0 1px 2px var(--color-light-gray);
+  background: rgba(255,255,255,0.05); /* ligero fondo al pasar */
+  border-radius: 4px;
+}
+
+.navbar-links a:hover .nav-icon,
+.nav-button:hover .nav-icon,
+.logout-btn:hover .nav-icon {
+  transform: scale(1.2);
+  filter: brightness(1.1);
+}
+
+/* 📌 Botón hamburguesa oculto en PC */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* 📌 MENÚ RESPONSIVO (solo en móviles) */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .nav-icon {
+    width: 40px;
+    height: auto;
+  }
+}

@@ -1,0 +1,156 @@
+/* ------------------------------------------------------------
+   AdminProducts.css
+   Path: src/styles/AdminProducts.css
+   ------------------------------------------------------------ */
+
+/* Contenedor principal */
+.admin-products {
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    color: #f0f0f0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Header: título + botón */
+  .admin-products .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .admin-products .header h2 {
+    font-size: 2rem;
+    color: #ff4d4d;
+    margin: 0;
+    animation: slideDown 0.8s ease-in-out;
+  }
+  
+  /* Botón "Agregar Producto" */
+  .btn-add-product {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-add-product:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+  }
+  
+  /* Grid de tarjetas */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Tarjeta de producto */
+  .product-card {
+    background-color: #2b2b2b;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popUp 0.4s ease forwards;
+    opacity: 0;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(255, 77, 77, 0.4);
+  }
+  
+  /* Imagen */
+  .image-wrapper {
+    background: #1e1e1e;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-wrapper img {
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* Info: nombre, precio y acciones */
+  .info {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product-name {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+  .product-price {
+    color: #cccccc;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  
+  /* Botones de edición y eliminación */
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .edit-btn,
+  .delete-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .edit-btn {
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+  }
+  .edit-btn:hover {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  .delete-btn {
+    background-color: #cc0000;
+    color: #ffffff;
+  }
+  .delete-btn:hover {
+    background-color: #a80000;
+    transform: translateY(-2px);
+  }
+  
+  /* Animaciones globales */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes popUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }  

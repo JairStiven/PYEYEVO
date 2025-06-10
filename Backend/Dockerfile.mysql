@@ -1,0 +1,8 @@
+# Usar la imagen oficial de MySQL
+FROM mysql:latest
+
+# Copiar un script SQL para inicializar la base de datos (opcional)
+COPY ecommerce_db.sql /docker-entrypoint-initdb.d/
+
+# Exponer el puerto por defecto de MySQL
+EXPOSE 3306

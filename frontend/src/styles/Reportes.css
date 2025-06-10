@@ -1,0 +1,87 @@
+/* ------------------------------------------------------------
+   Reportes.css
+   ------------------------------------------------------------ */
+
+/* Fondo de toda la página */
+.reportes-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 4rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Tarjeta glass centrada */
+  .reportes-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  /* Título */
+  .reportes-card h1 {
+    font-size: 2rem;
+    color: #ff4d4d;
+    margin-bottom: 1.5rem;
+    animation: slideDown 0.8s ease-in-out;
+  }
+  
+  /* Contenedor de botones */
+  .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* Botones de reporte */
+  .report-button {
+    background-color: #ff4d4d !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 14px rgba(255, 77, 77, 0.3) !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
+  }
+  
+  .report-button:hover {
+    background-color: #cc0000 !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Animación */
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Adaptación móvil */
+  @media (max-width: 600px) {
+    .reportes-page {
+      padding-top: 2rem;
+    }
+    .reportes-card {
+      padding: 1.5rem;
+      width: 95%;
+    }
+    .buttons-container {
+      flex-direction: column;
+    }
+    .report-button {
+      width: 100% !important;
+    }
+  }  

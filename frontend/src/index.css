@@ -1,0 +1,64 @@
+/* src/index.css */
+
+/* Variables de colores */
+:root {
+  --color-light-gray: #e0e0e0;
+  --color-black: #000000;
+  --color-red: #ff0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: var(--color-light-gray);
+  color: var(--color-black);
+  overflow-x: hidden;
+}
+
+/* Asegura que la app no limite el scroll */
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-red);
+}
+.nav-icon {
+  filter: invert(1);
+}
+
+/* Botones */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--color-black);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-red);
+}
+
+/* Asegura que todo tenga scroll vertical si lo necesita */
+body {
+  overflow-y: auto;
+}

@@ -1,0 +1,146 @@
+/* ------------------------------------------------------------
+   AdminFormularioProducto.css
+   ------------------------------------------------------------ */
+
+/* Contenedor principal */
+.formulario-producto-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Título */
+.formulario-producto-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ff4d4d;
+  margin-bottom: 2.5rem;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* Card “glass” */
+.formulario-producto {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  animation: popUp 0.5s ease forwards;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+/* Form row para Precio / Stock */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.half {
+  flex: 1;
+}
+
+/* Cada grupo de campo */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+/* Inputs, textarea, select */
+.formulario-producto input,
+.formulario-producto textarea,
+.formulario-producto select {
+  background: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.formulario-producto textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-producto input::placeholder,
+.formulario-producto textarea::placeholder {
+  color: #666;
+}
+
+/* Select – estilo por defecto */
+.formulario-producto select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23ccc%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px 6px;
+}
+
+.formulario-producto select:focus {
+  outline: none;
+}
+
+/* Focus states */
+.formulario-producto input:focus,
+.formulario-producto textarea:focus,
+.formulario-producto select:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 6px rgba(255, 77, 77, 0.5);
+  background: #262626;
+}
+
+/* Botón guardar/actualizar */
+.btn-guardar {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(255, 77, 77, 0.3);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes popUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formulario-producto {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}

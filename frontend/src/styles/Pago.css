@@ -1,0 +1,59 @@
+.products-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.products-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pago-container {
+  background-color: #2c2c2c; /* fondo oscuro */
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pago-container h2,
+.pago-container h4 {
+  color: white;
+}
+
+.list-group-item {
+  background-color: #3a3a3a;
+  border: none;
+  color: white;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item span {
+  color: #ffffff; /* color llamativo para el precio */
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
